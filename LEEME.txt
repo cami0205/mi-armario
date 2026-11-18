@@ -1,0 +1,36 @@
+MI ARMARIO · PERSONAL STYLIST — PWA PARA IPHONE
+
+ESTA VERSIÓN INCLUYE
+- Armario con fotos y categorías de prendas, colores, estaciones, formalidad y calce.
+- Base de datos local del navegador (IndexedDB) para guardar las prendas en el dispositivo.
+- Selector de acontecimiento: trabajo/entrevista, tarde, cine, cena, pádel, cotidiano y evento.
+- Selector de estación y clima.
+- Generador de combinaciones basado en las categorías y atributos que ingreses.
+- Sugerencias básicas de armonía de color y peinados por ocasión.
+- Perfil con altura, preferencias de calce, colorimetría declarada y preferencias de peinado.
+- Guardado local de foto de referencia y looks favoritos.
+
+LÍMITES IMPORTANTES — NO ES TODAVÍA UNA IA DE PRUEBA VIRTUAL
+Esta versión NO analiza automáticamente tu foto, no determina tu estación de colorimetría de manera fiable y NO genera una imagen tuya vistiendo las prendas. Tampoco consulta el clima real. Las combinaciones y consejos actuales son reglas locales basadas en los datos que cargues.
+Para la prueba virtual real hace falta integrar un proveedor/modelo de virtual try-on y un backend seguro. No se debe poner una clave API privada dentro del HTML. La foto personal y las fotos de ropa solo se enviarían a ese proveedor con consentimiento explícito.
+Las fotos se guardan localmente en el dispositivo/navegador. No hay sincronización entre dispositivos ni copia en la nube. No borres los datos del sitio sin exportar/respaldar tus fotos.
+
+CÓMO PUBLICAR Y AGREGAR A LA PANTALLA DE INICIO DEL IPHONE (GRATIS CON GITHUB PAGES)
+1. En una computadora, descargá y descomprimí mi_armario_pro_iphone.zip.
+2. Creá o iniciá sesión en github.com.
+3. Creá un repositorio nuevo, por ejemplo mi-armario.
+4. Subí TODOS los archivos de esta carpeta a la raíz del repositorio (index.html, manifest.webmanifest, sw.js, icon-192.png e icon-512.png).
+5. En GitHub abrí Settings > Pages.
+6. En “Build and deployment”, elegí “Deploy from a branch”; seleccioná “main” y “/(root)” y guardá.
+7. Esperá a que GitHub Pages publique el sitio. La dirección será parecida a https://TU-USUARIO.github.io/mi-armario/ (reemplazá TU-USUARIO por tu usuario real).
+8. En el iPhone, abrí ESA dirección con Safari (no dentro de Instagram/WhatsApp).
+9. Tocá el botón Compartir de Safari (cuadrado con flecha hacia arriba).
+10. Elegí “Añadir a pantalla de inicio”. Si no aparece, desplazá las opciones y buscá “Editar acciones”.
+11. Cambiá el nombre si querés y tocá “Añadir”.
+12. Abrí el ícono “Mi Armario” desde la pantalla de inicio.
+
+NOTAS
+- El ZIP por sí solo no se instala directamente en iOS: primero hay que publicarlo en HTTPS.
+- PWA no es lo mismo que una app nativa publicada en App Store.
+- Para conservar los datos, usá el mismo iPhone y el mismo navegador/perfil. Exportá o guardá copias de las fotos originales.
+- La función de foto personal es opcional; no cargues fotos íntimas. Para una prueba virtual con IA habrá que revisar privacidad, retención y eliminación de imágenes del proveedor antes de habilitarla.
