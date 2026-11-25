@@ -1,0 +1,5 @@
+const CACHE_NAME = 'mi-armario-pro-v12';
+const APP_FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
+self.addEventListener('install', event => { event.waitUntil((async()=>{const c=await caches.open(CACHE_NAME);await c.addAll(APP_FILES);await self.skipWaiting();})());});
+self.addEventListener('activate', event => { event.waitUntil((async()=>{const keys=await caches.keys();await Promise.all(keys.filter(k=>k.startsWith('mi-armario-pro-')&&k!==CACHE_NAME).map(k=>caches.delete(k)));await self.clients.claim();})());});
+self.addEventListener('fetch', event => {const req=event.request;if(req.method!=='GET'||new URL(req.url).origin!==self.location.origin)return;event.respondWith((async()=>{const c=await caches.open(CACHE_NAME);if(req.mode==='navigate'){try{const r=await fetch(req,{cache:'no-store'});if(r.ok)await c.put(req,r.clone());return r;}catch(e){return(await c.match(req))||(await c.match('./index.html'))||Response.error();}}const hit=await c.match(req);if(hit)return hit;try{const r=await fetch(req);if(r.ok)await c.put(req,r.clone());return r;}catch(e){return Response.error();}})());});
